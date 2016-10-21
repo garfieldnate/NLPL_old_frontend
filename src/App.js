@@ -4,6 +4,13 @@ import './App.css';
 import TextWindow from './text_window.js'
 import VocabPanel from './vocab_panel.js'
 
+var VOCABS = [
+  {lemma: 'gehen', POS: 'V'},
+  {lemma: 'sehen', POS: 'V'},
+  {lemma: 'der Tische', POS: 'N'},
+  {lemma: 'schwartz', POS: 'A'},
+];
+
 class App extends Component {
   render() {
     return (
@@ -17,7 +24,7 @@ class App extends Component {
         </p>
         <TextWindow />
         <hr />
-        <VocabPanel />
+        <VocabPanel vocabs={VOCABS} />
       </div>);
   }
 }
