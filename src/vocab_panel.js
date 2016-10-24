@@ -5,9 +5,9 @@ import './Vocab.css';
 class Vocab extends Component {
   constructor(props) {
     super(props);
+    this.state = {expanded: false};
     // This line is important!
     this.togglePos = this.togglePos.bind(this);
-    this.state = {expanded: false};
   }
 
   render() {

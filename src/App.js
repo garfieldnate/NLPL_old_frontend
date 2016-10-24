@@ -11,6 +11,15 @@ var VOCABS = [
   {lemma: 'schwartz', POS: 'A'},
 ];
 
+var TEXT = {
+  text: "Ich bin geschlafe",
+  tokens: [
+    {start:0,end:2,lemma:"ich"},
+    {start:4,end:6,lemma:"sein"},
+    {start:8,end:16,lemma:"schlafen"}
+  ]
+};
+
 class App extends Component {
   render() {
     return (
@@ -22,7 +31,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <TextWindow />
+        <TextWindow text={TEXT}/>
         <hr />
         <VocabPanel vocabs={VOCABS} />
       </div>);
