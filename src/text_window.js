@@ -6,15 +6,15 @@ import './Token.css';
 class TextWindow extends Component {
   constructor(props){
     super(props);
-    this.getTextChildren = this.getTextChildren.bind(this);
+    this.splitTextIntoTokens = this.splitTextIntoTokens.bind(this);
   }
   render() {
-    var textChildren = this.getTextChildren(this.props.text);
+    var textChildren = this.splitTextIntoTokens(this.props.text);
     return <div>
       {textChildren}
     </div>;
   }
-  getTextChildren(textData){
+  splitTextIntoTokens(textData){
     var children = []
     var text = textData.text;
     var tokens = textData.tokens;
@@ -23,7 +23,8 @@ class TextWindow extends Component {
       if(token.start > ind){
         children.push(<span key={ind}>{textRange(text, ind, token.start - 1)}</span>);
       }
-      children.push(<Token text={textRange(text, token.start, token.end)} className="token" key={token.start}/>);
+      children.push(<Token text={textRange(text, token.start, token.end)}
+                           className="token" key={token.start}/>);
       ind = token.end + 1;
     }
     return children;
